@@ -1,11 +1,22 @@
-import Movie from '../Movie/Movie';
+import Movie from "../Movie/Movie";
 
-export function Movielist() {
-    return(
-        <ul id="movies">
-            <Movie title="Star Wars" rating="5"/>
-        </ul>
-    );
+export function Movielist({ movies }) {
+  function deleteItem(id) {
+    deleteItem(id);
+    console.log("deleteItem", id);
+  }
+  return (
+    <ul id="movies" className="list-group">
+      {movies.map((movie, index) => (
+        <Movie
+          key={index}
+          title={movie.title}
+          rating={movie.rating}
+          deleteItem={deleteItem}
+        />
+      ))}
+    </ul>
+  );
 }
 
 export default Movielist;
