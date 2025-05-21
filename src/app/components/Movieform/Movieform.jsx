@@ -1,4 +1,4 @@
-import Button from "./Button";
+import Button, { SubmitButton } from "../SubmitButton/SubmitButton";
 export function Movieform() {
   return (
     <form id="add-movie-form">
@@ -16,7 +16,7 @@ export function Movieform() {
                     <option value="4">4</option>
                     <option value="5">5</option>
                 </select>
-                <Button value="Lägg till film" />
+                <SubmitButton value="Lägg till film" />
         </form>
   );
 }
