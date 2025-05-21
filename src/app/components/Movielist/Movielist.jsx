@@ -1,7 +1,6 @@
 import Movie from "../Movie/Movie";
 
-export function Movielist({ movies }) {
-  function deleteItem(id) {}
+export function Movielist({ movies, deleteItem }) {
   return (
     <ul id="movies" className="list-group">
       {movies.map((movie, index) => (

@@ -1,6 +1,12 @@
-export function Button({ value }) {
-    return (
-        <button type="button" className="btn btn-primary" value={value}>{value}</button>
-
-    );
+export function Button({ value, onClick }) {
+  return (
+    <button
+      type="button"
+      className="btn btn-success"
+      value={value}
+      onClick={onClick}
+    >
+      {value}
+    </button>
+  );
 }

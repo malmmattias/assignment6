@@ -19,6 +19,20 @@ export default function Home() {
     setMovies((prevMovies) => prevMovies.filter((movie) => movie.title !== id));
   };
 
+  function sortMoviesInAlphabeticalOrder() {
+    const sortedMovies = [...movies].sort((a, b) =>
+      a.title.localeCompare(b.title)
+    );
+    setMovies(sortedMovies);
+  }
+
+  function sortMoviesInRatingOrder() {
+    const sortedMovies = [...movies].sort((a, b) =>
+      a.rating.localeCompare(b.rating)
+    );
+    setMovies(sortedMovies);
+  }
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
@@ -28,9 +42,13 @@ export default function Home() {
         <Movieform addMovie={addMovie} />
         <hr></hr>
         <h2>Filmer</h2>
-        <Movielist movies={movies} />
-        <Button value="Alfabetisk ordning" />
-        <Button value="Betygsordning" />
+        <Movielist movies={movies} deleteItem={deleteItem} />
+        <hr></hr>
+        <Button
+          value="Alfabetisk ordning"
+          onClick={sortMoviesInAlphabeticalOrder}
+        />
+        <Button value="Betygsordning" onClick={sortMoviesInRatingOrder} />
       </main>
     </div>
   );
